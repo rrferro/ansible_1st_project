@@ -2,3 +2,4 @@
 192.168.0.226
 [EVE-NG]
 192.168.0.211
+#ansible all --key-file ~/.ssh/ansible -i inventory -m ping
