@@ -3,3 +3,7 @@
 [EVE-NG]
 192.168.0.211
 #ansible all --key-file ~/.ssh/ansible -i inventory -m ping
+[Ubuntu]
+192.168.0.180
+[Windows-Jellyfin]
+192.168.0.107
