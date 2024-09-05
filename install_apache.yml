@@ -3,7 +3,6 @@
   tasks:
     - name: install updates
       ansible.builtin.apt:
-        update_only: yes
         update_cache: yes
         autoclean: yes
         autoremove: yes
@@ -20,4 +19,14 @@
           - apache2
           - libapache2-mod-php
         state: latest
+      
+
+- hosts: Unifi
+  become: true
+  tasks:
+    - name: Update Unifi
+      ansible.builtin.apt:
+        name: unifi         
+        state: latest
+        autoremove: yes
       when: ansible_distribution == "Ubuntu"
