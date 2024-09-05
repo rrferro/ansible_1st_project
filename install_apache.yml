@@ -1,26 +1,23 @@
 - hosts: all
   become: true
   tasks:
-  
-   - name: install updates
-     ansible.builtin.apt: 
-       update_only: yes
-       update_cache: yes
-       autoclean: yes
-       autoremove: yes
-       purge: true
-       clean: yes
-     when: ansible_distribution == "Ubuntu" 
-
+    - name: install updates
+      ansible.builtin.apt:
+        update_only: yes
+        update_cache: yes
+        autoclean: yes
+        autoremove: yes
+        purge: true
+        clean: yes
+      when: ansible_distribution == "Ubuntu"
 
 - hosts: Ubuntu
   become: true
   tasks:
-  
-   - name: install apache
-     ansible.builtin.apt: 
-       pkg: 
-       - apache2
-       - libapache2-mod-php       
-       state: latest
-     when: ansible_distribution == "Ubuntu"
+    - name: install apache
+      ansible.builtin.apt:
+        pkg:
+          - apache2
+          - libapache2-mod-php
+        state: latest
+      when: ansible_distribution == "Ubuntu"
