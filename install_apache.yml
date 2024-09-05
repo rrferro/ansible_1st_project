@@ -20,7 +20,6 @@
           - libapache2-mod-php
         state: latest
       
-
 - hosts: Unifi
   become: true
   tasks:
