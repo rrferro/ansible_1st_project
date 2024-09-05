@@ -4,12 +4,12 @@
   
    - name: install updates
      ansible.builtin.apt: 
-      update_only: yes
-      update_cache: yes
-      autoclean: yes
-      autoremove: yes
-      purge: true
-      clean: yes
+       update_only: yes
+       update_cache: yes
+       autoclean: yes
+       autoremove: yes
+       purge: true
+       clean: yes
      when: ansible_distribution == "Ubuntu" 
 
 
@@ -19,6 +19,6 @@
   
    - name: install apache
      ansible.builtin.apt: 
-      name: apache2 libapache2-mod-php       
-      state: latest
+       name: apache2 libapache2-mod-php       
+       state: latest
      when: ansible_distribution == "Ubuntu"
