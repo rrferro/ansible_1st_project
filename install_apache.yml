@@ -5,6 +5,9 @@
    - name: update repository index
      apt: 
       update_cache: yes
+     when: ansible_distribution == "Ubuntu" 
+
 
    - name: Install Apache
      apt: name=apache2 state=present
+     when: ansible_distribution == "Ubuntu" 
