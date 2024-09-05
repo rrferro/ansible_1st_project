@@ -19,6 +19,8 @@
   
    - name: install apache
      ansible.builtin.apt: 
-       name: apache2 libapache2-mod-php       
+       pkg: 
+       - apache2
+       - libapache2-mod-php       
        state: latest
      when: ansible_distribution == "Ubuntu"
