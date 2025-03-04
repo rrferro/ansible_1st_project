@@ -1,9 +1,13 @@
 #ansible all --key-file ~/.ssh/ansible -i inventory -m ping
 [Unifi]
-192.168.0.226
+192.168.0.11
 [EVE-NG]
 192.168.0.211
 [Ubuntu]
 192.168.0.180
-[Windows-Jellyfin]
-192.168.0.107
+[Jellyfin]
+192.168.0.10
+[ansible-controller]
+192.168.0.15
+[test-vlan]
+192.168.0.234
