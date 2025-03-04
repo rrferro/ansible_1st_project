@@ -19,7 +19,7 @@
           - apache2
           - libapache2-mod-php
         state: latest
-      
+
 - hosts: Unifi
   become: true
   tasks:
@@ -29,3 +29,4 @@
         state: latest
         autoremove: yes
       when: ansible_distribution == "Ubuntu"
+
