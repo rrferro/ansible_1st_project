@@ -19,12 +19,12 @@
           - apache2
           - libapache2-mod-php
         state: latest
-      
+
 - hosts: Unifi
   become: true
   tasks:
     - name: Update Unifi
       ansible.builtin.apt:
-        name: unifi         
+        name: unifi
         state: latest
         autoremove: yes
