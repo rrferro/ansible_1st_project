@@ -1,0 +1,20 @@
+all:
+  children:
+    ansible-controller:
+      hosts:
+        localhost:
+          ansible_connection: local
+
+    Unifi:
+      hosts:
+        192.168.0.11:
+
+    Jellyfin:
+      hosts:
+        192.168.0.10:
+          ansible_user: BiteOfTeck
+          ansible_ssh_private_key_file: ~/.ssh/ansible
+
+    testvlan:
+      hosts:
+        192.168.0.234:

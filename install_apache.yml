@@ -1,9 +1,10 @@
 - hosts: all
   become: true
   tasks:
-    - name: install updates
+    - name: Update and Upgrade apt cache
       ansible.builtin.apt:
         update_cache: yes
+        upgrade: yes
         autoclean: yes
         autoremove: yes
         purge: true
@@ -25,8 +26,13 @@
   tasks:
     - name: Update Unifi
       ansible.builtin.apt:
-        name: unifi         
+        name: unifi
         state: latest
         autoremove: yes
       when: ansible_distribution == "Ubuntu"
+
+- hosts: ec2_instance
+  become: true
+  tasks:
+    
 
