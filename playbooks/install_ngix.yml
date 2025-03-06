@@ -1,0 +1,17 @@
+---
+- name: Configure EC2 instance
+  hosts: ec2_instance
+  become: yes
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+
